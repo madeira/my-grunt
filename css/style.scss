@@ -1,0 +1,13 @@
+$primary-color: red;
+
+h1{
+	color: $primary-color;
+	text-align: center;
+	font-size: 33px;
+}
+
+h2{
+	text-align: center;
+	border-radius: 5px;
+	/*display: flex;*/
+}
