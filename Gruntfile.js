@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 
         uglify: {
           build: {
-            src: [ 'js/libs/**.js', 'js/main.js'],
-            dest: 'js/build/global.min.js'
+            src: [ 'src/scripts/libs/**.js', 'js/main.js'],
+            dest: 'static/global.min.js'
           }
         },
 
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {                         // Dictionary of files
-              'css/build/main.css': 'css/style.scss',  // 'destination': 'source'
+              'static/main.css': 'src/styles/main.scss',  // 'destination': 'source'
             }
           }
         },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
               livereload: true,
             },
             src: {
-              files: ['js/libs/*.js', 'js/*.js', 'css/*.scss', '*.html'],
+              files: ['src/scripts/libs/*.js', 'src/scripts/*.js', 'src/styles/*.scss', 'templates/*.html'],
               tasks: ['default'],
             }
         },

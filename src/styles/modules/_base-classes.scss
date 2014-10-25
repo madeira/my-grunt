@@ -1,0 +1,68 @@
+// # Project global base classes
+// %clearfix - clearfix base class
+//		@extend %clearfix;
+%clearfix {
+	@if $legacy-support-for-ie {
+		*zoom: 1;
+	}
+	
+	&:after {
+		content: '';
+		display:table;
+		clear: both;
+	}
+}
+
+// # %button-reset - button reset base class
+//		@extend %button-reset;
+%button-reset {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	overflow: hidden;
+	outline: none;
+	border: none;
+	position: relative;
+	background: none;
+	overflow: visible;
+	padding: 0;
+	margin: 0;
+	color: $base-color;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+}
+
+// # %button - button base class
+//		@extend %button;
+%button {
+	@extend %button-reset;
+	padding: 11px 10px 10px;
+	height: 18px;
+	border: 1px solid #ccc;
+}
+
+// # %input-text - input reset base class
+//		@extend %input-text;
+%input-text {
+	overflow: hidden;
+
+	input[type="text"] {	
+		margin: 0;
+		padding: 5px;
+		background: none;
+		border: none;
+		width: 100%;
+		display: block;
+		outline: none;
+		box-sizing: border-box;
+	}
+}
+
+// # %flex-image - Flexible image base class
+//		@extend %flex-image;
+%flex-image {
+	display: block;
+	width: 100%;
+	height: auto;
+}

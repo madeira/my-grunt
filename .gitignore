@@ -1,5 +1,5 @@
 node_modules
-../static
+static
 .tmp
 .sass-cache
 bower_components
