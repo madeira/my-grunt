@@ -47,9 +47,24 @@ module.exports = function(grunt) {
                 browsers: ['last 2 version', 'ie 9']
             },
             no_dest: {
-                src: 'css/build/main.css' // globbing is also possible here
+                src: 'static/main.css' // globbing is also possible here
             }
-        }
+        },
+
+        cssmin: {
+          add_banner: {
+            options: {
+              banner: '/* My minified css file */',
+              report: 'gzip'
+            },
+            files: {
+              'static/main.css': ['static/main.css']
+            }
+          }
+        },
+
+        clean: ["static/"]
+
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -58,9 +73,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'sass', 'autoprefixer']);
+    grunt.registerTask('default', ['clean', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
     grunt.registerTask('server', 'running a dev server', function(){
         grunt.task.run('connect:server:keepalive');
     });
